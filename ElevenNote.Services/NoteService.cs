@@ -10,11 +10,15 @@ namespace ElevenNote.Services
 {
     public class NoteService
     {
+
+        //business layer
         private readonly Guid _userId;
         public NoteService(Guid userId)
         {
             _userId = userId;
         }
+
+        
 
         public bool CreateNote(NoteCreate model)
         {
@@ -23,6 +27,7 @@ namespace ElevenNote.Services
                 {
                     OwnerId = _userId,
                     Title = model.Title,
+                    CategoryId = model.CategoryId, //added for challenge
                     Content = model.Content,
                     CreatedUtc = DateTimeOffset.Now
                 };
@@ -30,10 +35,11 @@ namespace ElevenNote.Services
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Notes.Add(entity);
-                return ctx.SaveChanges() == 1;
+                return ctx.SaveChanges() >= 1;//changed for challenge
             }
 
         }
+       
 
         public IEnumerable<NoteListItem> GetNotes()
         {
@@ -71,7 +77,9 @@ namespace ElevenNote.Services
                         Title = entity.Title,
                         Content = entity.Content,
                         CreatedUtc = entity.CreatedUtc,
-                        ModifiedUtc = entity.ModifiedUtc
+                        ModifiedUtc = entity.ModifiedUtc,
+                        Category = entity.Category
+                        
                     };
             }
 
@@ -88,6 +96,7 @@ namespace ElevenNote.Services
 
                 entity.Title = model.Title;
                 entity.Content = model.Content;
+                entity.Category = model.Category;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;
 
                 return ctx.SaveChanges() == 1;
