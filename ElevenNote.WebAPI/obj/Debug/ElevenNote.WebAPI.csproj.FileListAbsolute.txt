@@ -123,3 +123,5 @@ C:\1150CDrive\ElevenNote\ElevenNote.WebAPI\bin\Microsoft.CodeDom.Providers.DotNe
 C:\1150CDrive\ElevenNote\ElevenNote.WebAPI\obj\Debug\ElevenNote.WebAPI.csproj.CopyComplete
 C:\1150CDrive\ElevenNote\ElevenNote.WebAPI\obj\Debug\ElevenNote.WebAPI.dll
 C:\1150CDrive\ElevenNote\ElevenNote.WebAPI\obj\Debug\ElevenNote.WebAPI.pdb
+C:\1150CDrive\ElevenNote\ElevenNote.WebAPI\bin\Swashbuckle.Core.dll
+C:\1150CDrive\ElevenNote\ElevenNote.WebAPI\bin\WebActivatorEx.dll

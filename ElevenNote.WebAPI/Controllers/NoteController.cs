@@ -39,7 +39,7 @@ namespace ElevenNote.WebAPI.Controllers
 
         private NoteService CreateNoteService()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
+            var userId = Guid.Parse(User.Identity.GetUserId());https://docs.apigee.com/api-platform/troubleshoot/runtime/500-internal-server-error-0#:~:text=The%20HTTP%20status%20code%20500,other%20error%20code%20is%20suitable.
             var noteService = new NoteService(userId);
             return noteService;
         }
